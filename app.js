@@ -6,6 +6,10 @@ const app = express();
 const port = 3000;
 
 app.get("/", (req, res) => {
+  res.json("ciao");
+});
+
+app.get("/bacheca", (req, res) => {
   res.json(generatePostsArr());
 });
 
