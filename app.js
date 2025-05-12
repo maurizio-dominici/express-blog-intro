@@ -1,16 +1,18 @@
-const { generatePostsArr } = require("./variables.js");
-console.log(generatePostsArr);
+const { posts } = require("./variables.js");
+console.log(posts);
 
 const express = require("express");
 const app = express();
 const port = 3000;
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.json("ciao");
+  res.json("Welcome user");
 });
 
 app.get("/bacheca", (req, res) => {
-  res.json(generatePostsArr());
+  res.json({ posts });
 });
 
 app.listen(port, () => {
