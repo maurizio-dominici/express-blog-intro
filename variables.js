@@ -1,3 +1,4 @@
+// Array generate
 const posts = [
   {
     id: 1,
@@ -41,4 +42,5 @@ const posts = [
   },
 ];
 
+// exports
 module.exports = { posts };
