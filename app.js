@@ -3,7 +3,8 @@ console.log(posts);
 
 const express = require("express");
 const app = express();
-const port = 3000;
+const appPort = 3000;
+const appUrl = `http://localhost:` + appPort;
 
 app.use(express.static("public"));
 
@@ -15,6 +16,6 @@ app.get("/bacheca", (req, res) => {
   res.json({ posts });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on http://localhost:` + port);
+app.listen(appPort, () => {
+  console.log(`Server listening on ${appUrl}`);
 });
