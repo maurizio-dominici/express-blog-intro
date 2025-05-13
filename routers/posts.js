@@ -1,6 +1,6 @@
 // imports
 const express = require("express");
-// const { posts } = require("../variables");
+const { posts } = require("../variables");
 
 // express posts.js config
 const router = express.Router();
@@ -17,13 +17,15 @@ const router = express.Router();
 
 // root ==== view posts list (INDEX)
 router.get("/", (req, res) => {
-  res.json("lettura della lista dei post");
+  res.json(posts);
+  console.log("lettura della lista dei post");
 });
 
 // root ==== view single post (SHOW)
 router.get("/:id", (req, res) => {
   const id = parseInt(req.params.id);
-  res.json(`lettura del post ${id}`);
+  res.json(posts.find((currentPost) => currentPost.id === id));
+  console.log(`lettura del post ${id}`);
 });
 
 // root ==== create new post (STORE)
